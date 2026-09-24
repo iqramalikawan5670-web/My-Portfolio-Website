@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --color-brand-indigo: #4F46E5;
+  --color-brand-purple: #6C63FF;
+  --color-brand-violet: #8B5CF6;
+  --color-brand-blue: #3B82F6;
+  --color-brand-pink: #EC4899;
+  --color-canvas-ivory: #FAF9F6;
+  --color-canvas-lavender: #F8F7FF;
+  --color-canvas-dark: #121024;
+}
+
+:root {
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+/* Simple, Clean, Modern Heading Typography */
+.font-display {
+  font-family: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.text-outlined {
+  -webkit-text-stroke: 1.5px rgba(108, 99, 255, 0.45);
+  color: transparent;
+  transition: all 0.3s ease;
+}
+
+.text-outlined:hover {
+  -webkit-text-stroke: 1.5px rgba(236, 72, 153, 0.8);
+  color: rgba(139, 92, 246, 0.15);
+}
+
+/* 2026 Vibrant modern gradient text utilities */
+.gradient-text-hero {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 45%, #EC4899 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-blue-violet {
+  background: linear-gradient(135deg, #3B82F6 0%, #6C63FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-purple-pink {
+  background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glassmorphism Navigation */
+.floating-glass-nav {
+  background: rgba(255, 255, 255, 0.84);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 92, 246, 0.18);
+  box-shadow: 0 10px 35px -5px rgba(108, 99, 255, 0.12);
+}
+
+/* 2026 Agency Glassmorphism Card with Micro-Interactions */
+.agency-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.14);
+  box-shadow: 0 10px 30px -4px rgba(79, 70, 229, 0.06);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.agency-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 20px 40px -8px rgba(108, 99, 255, 0.18);
+}
+
+/* Service Card 2026 Micro-Interactions */
+.service-card-2026 {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 92, 246, 0.15);
+  box-shadow: 0 10px 30px -4px rgba(79, 70, 229, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card-2026::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(236, 72, 153, 0.08), rgba(139, 92, 246, 0.08), transparent);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.service-card-2026:hover::before {
+  left: 100%;
+}
+
+.service-card-2026:hover {
+  transform: translateY(-8px);
+  border-color: rgba(139, 92, 246, 0.55);
+  box-shadow: 0 24px 50px -10px rgba(108, 99, 255, 0.22);
+}
+
+/* Glowing Primary Button */
+.btn-gradient-primary {
+  background: linear-gradient(135deg, #4F46E5 0%, #8B5CF6 50%, #EC4899 100%);
+  color: #FFFFFF;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px -4px rgba(108, 99, 255, 0.38);
+}
+
+.btn-gradient-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -4px rgba(236, 72, 153, 0.45);
+}
+
+/* Outlined / Secondary Button with Gradient Border */
+.btn-gradient-secondary {
+  background: #FFFFFF;
+  color: #17152B;
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gradient-secondary:hover {
+  border-color: #8B5CF6;
+  background: rgba(248, 247, 255, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(139, 92, 246, 0.2);
+}
+
+/* 2026 Kinetic Ribbon Track */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 32s linear infinite;
+}
+
+.animate-ticker:hover {
+  animation-play-state: paused;
+}
+
+/* Floating UI Badges */
+@keyframes float1 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(10px) rotate(-1deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.05); }
+}
+
+.animate-float-1 {
+  animation: float1 5s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float2 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Smooth Focus Outlines */
+*:focus-visible {
+  outline: 2px solid #8B5CF6;
+  outline-offset: 2px;
+}
